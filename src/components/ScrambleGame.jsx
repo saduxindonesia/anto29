@@ -353,7 +353,7 @@ const ScrambleGame = () => {
                                 className="hint-box"
                             >
                                 <Lightbulb className="hint-icon" />
-                                <p className="hint-text">{gameQuestions[currentStage]?.hint}</p>
+                                <p className="hint-text">Petunjuknya ini nih : {gameQuestions[currentStage]?.hint}</p>
                             </motion.div>
 
                             <div className="answer-section">
