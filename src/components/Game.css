@@ -1,0 +1,171 @@
+.game-section {
+    padding: 6rem 0;
+    min-height: 80vh;
+    background: radial-gradient(circle at center, #1e293b, var(--color-bg));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.game-instruction {
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    perspective: 1000px;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Pointer Events */
+.card.solved {
+    pointer-events: none;
+    /* Prevent clicks on already revealed cards */
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    /* Key to hide back when flipped */
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    font-size: 2rem;
+}
+
+.card-front {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-question {
+    font-weight: bold;
+    font-size: 2.5rem;
+    opacity: 0.8;
+}
+
+.card-back {
+    background: white;
+    color: var(--color-primary);
+    transform: rotateY(180deg);
+    /* Pre-rotate back side */
+    border: 2px solid var(--color-primary);
+}
+
+.card.solved .card-back {
+    background: #10b981;
+    /* Green success */
+    color: white;
+    border-color: #059669;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+}
+
+.victory-message {
+    background: rgba(30, 41, 59, 0.9);
+    padding: 2rem 4rem;
+    border-radius: 1rem;
+    text-align: center;
+    border: 1px solid var(--color-accent);
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.victory-message h3 {
+    font-size: 2rem;
+    color: var(--color-highlight);
+    margin-bottom: 1rem;
+}
+
+.restart-btn {
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+/* Start Card Styles */
+.start-card {
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+    border-radius: 1.5rem;
+}
+
+/* Button Give Up for Game */
+.btn-giveup-game {
+    background: rgba(239, 68, 68, 0.05);
+    border: 1px solid rgba(239, 68, 68, 0.6);
+    color: #f87171;
+    padding: 0.75rem 2.5rem;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 3rem auto 0;
+    letter-spacing: 0.05em;
+}
+
+.btn-giveup-game:hover {
+    background: rgba(239, 68, 68, 0.15);
+    border-color: #f87171;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+}
+
+@media (max-width: 600px) {
+    .game-board {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.75rem;
+    }
+
+    .card {
+        width: 70px;
+        height: 70px;
+    }
+}

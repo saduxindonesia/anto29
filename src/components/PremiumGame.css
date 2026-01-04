@@ -1,0 +1,222 @@
+/* Game & Challenge Modern Premium CSS */
+
+/* --- SHARED CARD STYLES --- */
+.game-section,
+.scramble-section {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.center-game,
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Glassmorphism Panel */
+.glass-panel,
+.start-card,
+.scramble-card {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    border-radius: 24px;
+    padding: 3rem;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative Glow */
+.glass-panel::before,
+.start-card::before,
+.scramble-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.title-game,
+.section-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+    position: relative;
+    z-index: 10;
+}
+
+.description,
+.game-instruction {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    position: relative;
+    z-index: 10;
+}
+
+/* --- BUTTONS --- */
+.btn-primary-glow {
+    background: linear-gradient(135deg, #3b82f6, #0ea5e9);
+    color: white;
+    padding: 1rem 3rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-radius: 99px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.5);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    position: relative;
+    z-index: 10;
+}
+
+.btn-primary-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 30px -10px rgba(59, 130, 246, 0.6);
+    filter: brightness(1.1);
+}
+
+/* --- LEVEL SELECT GRID --- */
+.level-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.level-card {
+    background: rgba(255, 255, 255, 0.07);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    padding: 1.5rem;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.level-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.4);
+}
+
+.level-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.level-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.level-desc {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    /* Brighter description */
+    font-weight: 500;
+}
+
+/* Specific Level Colors - Always Visible Borders */
+.level-card:nth-child(1) {
+    border-color: rgba(74, 222, 128, 0.3);
+}
+
+.level-card:nth-child(1):hover {
+    border-color: #4ade80;
+    background: rgba(74, 222, 128, 0.1);
+}
+
+/* Easy - Green */
+.level-card:nth-child(2) {
+    border-color: rgba(96, 165, 250, 0.3);
+}
+
+.level-card:nth-child(2):hover {
+    border-color: #60a5fa;
+    background: rgba(96, 165, 250, 0.1);
+}
+
+/* Medium - Blue */
+.level-card:nth-child(3) {
+    border-color: rgba(251, 146, 60, 0.3);
+}
+
+.level-card:nth-child(3):hover {
+    border-color: #fb923c;
+    background: rgba(251, 146, 60, 0.1);
+}
+
+/* Hard - Orange */
+.level-card:nth-child(4) {
+    border-color: rgba(248, 113, 113, 0.3);
+}
+
+.level-card:nth-child(4):hover {
+    border-color: #f87171;
+    background: rgba(248, 113, 113, 0.1);
+}
+
+/* Psycho - Red */
+
+/* --- MEMORY GAME START SCREEN --- */
+.start-icon-box {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(6, 182, 212, 0.2));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.2);
+}
+
+@media (max-width: 600px) {
+    .level-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .start-card,
+    .scramble-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .title-game {
+        font-size: 2.5rem;
+    }
+}

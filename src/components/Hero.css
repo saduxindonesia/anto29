@@ -1,0 +1,347 @@
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 4rem;
+    background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+}
+
+.hero-bg-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.hero-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+    animation: blob-pulse 8s infinite ease-in-out;
+}
+
+.blob-1 {
+    top: -10%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.blob-2 {
+    bottom: -10%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.4) 0%, rgba(0, 0, 0, 0) 70%);
+    animation-delay: 2s;
+}
+
+.blob-3 {
+    top: 40%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+@keyframes blob-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.3;
+    }
+}
+
+/* Confetti */
+.confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    top: -10px;
+    animation: fall linear infinite;
+}
+
+.c-0 {
+    background-color: #ef4444;
+}
+
+.c-1 {
+    background-color: #3b82f6;
+}
+
+.c-2 {
+    background-color: #f59e0b;
+}
+
+.c-3 {
+    background-color: #10b981;
+}
+
+@keyframes fall {
+    to {
+        top: 100vh;
+        transform: rotate(720deg);
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-title-wrapper {
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+    padding: 2rem;
+}
+
+.icon-decoration {
+    position: absolute;
+}
+
+.icon-tl {
+    top: -2rem;
+    left: -4rem;
+}
+
+.icon-tr {
+    top: -3rem;
+    right: -3rem;
+}
+
+.icon-br {
+    bottom: -2rem;
+    right: -4rem;
+}
+
+.icon-bl {
+    bottom: -3rem;
+    left: -3rem;
+}
+
+.drop-shadow-glow {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+.hero-heading-top {
+    font-size: 6rem;
+    line-height: 0.9;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    letter-spacing: -3px;
+    background: linear-gradient(to bottom, #ffffff 0%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.hero-heading-bottom {
+    font-size: 5.5rem;
+    line-height: 0.9;
+    font-weight: 900;
+    color: white;
+    letter-spacing: -2px;
+    margin-top: -10px;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.neon-text {
+    background: linear-gradient(to right, #60a5fa, #c084fc, #f472b6, #60a5fa);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-flow 3s linear infinite;
+    position: relative;
+    display: inline-block;
+}
+
+/* Optional: Add a glow behind the gradient text */
+.neon-text::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background: inherit;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: blur(15px);
+    opacity: 0.7;
+}
+
+@keyframes gradient-flow {
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 300% center;
+    }
+}
+
+.neon-blue {
+    color: #fff;
+    text-shadow:
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px #0ea5e9,
+        0 0 30px #0ea5e9,
+        0 0 40px #0ea5e9;
+    animation: glow-pulse 2s ease-in-out infinite alternate;
+    position: relative;
+    display: inline-block;
+}
+
+.neon-blue::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    color: #0ea5e9;
+    filter: blur(20px);
+    opacity: 0.8;
+}
+
+@keyframes glow-pulse {
+    from {
+        text-shadow:
+            0 0 5px #fff,
+            0 0 10px #fff,
+            0 0 20px #0ea5e9,
+            0 0 30px #0ea5e9;
+    }
+
+    to {
+        text-shadow:
+            0 0 10px #fff,
+            0 0 20px #fff,
+            0 0 30px #0ea5e9,
+            0 0 50px #0ea5e9,
+            0 0 70px #0ea5e9;
+    }
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: #e2e8f0;
+    margin-bottom: 3rem;
+    max-width: 40rem;
+    line-height: 1.6;
+}
+
+.glass-text {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    padding: 1rem 2rem;
+    border-radius: 99px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.25rem;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(90deg, #2563eb, #06b6d4);
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+}
+
+.pulse-effect {
+    animation: btn-pulse 2s infinite;
+}
+
+@keyframes btn-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 99, 235, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-heading-top {
+        font-size: 8rem;
+    }
+
+    .hero-heading-bottom {
+        font-size: 7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-heading-top {
+        font-size: 3.5rem;
+    }
+
+    .hero-heading-bottom {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .icon-tl {
+        top: -1rem;
+        left: -1rem;
+        transform: scale(0.6);
+    }
+
+    .icon-tr {
+        top: -2rem;
+        right: -1rem;
+        transform: scale(0.6);
+    }
+
+    .icon-br {
+        bottom: -1rem;
+        right: -1rem;
+        transform: scale(0.6);
+    }
+
+    .icon-bl {
+        bottom: -2rem;
+        left: -1rem;
+        transform: scale(0.6);
+    }
+}

@@ -1,0 +1,157 @@
+.wishes-section {
+    padding: 6rem 0;
+    background: linear-gradient(to bottom, var(--color-bg), #1e293b);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 4rem;
+    color: var(--color-text);
+}
+
+.text-highlight {
+    color: var(--color-primary);
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* Special Wishes Styling */
+.special-wishes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.special-wish-card {
+    padding: 2.5rem;
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.6), rgba(15, 23, 42, 0.8));
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    box-shadow: 0 10px 30px -5px rgba(59, 130, 246, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.special-wish-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+}
+
+.special-wish-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.special-avatar {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--color-accent), #f97316);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.5);
+}
+
+.special-name {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1.1;
+}
+
+.special-role {
+    color: var(--color-secondary);
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.special-text {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #e2e8f0;
+    font-style: italic;
+}
+
+/* Regular Wishes Grid */
+.wishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.wish-card {
+    padding: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.wish-card:hover {
+    background: rgba(30, 41, 59, 0.8);
+    border-color: var(--color-primary);
+}
+
+.wish-avatar {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    flex-shrink: 0;
+    font-size: 1.2rem;
+}
+
+.wish-content {
+    flex: 1;
+}
+
+.wish-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: var(--color-secondary);
+}
+
+.wish-text {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .special-wish-card {
+        padding: 1.5rem;
+    }
+
+    .special-name {
+        font-size: 1.5rem;
+    }
+}

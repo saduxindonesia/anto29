@@ -1,0 +1,294 @@
+/* Scramble Game Specific Styles */
+
+.scramble-game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* --- Playing State Redesign --- */
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 3rem;
+    gap: 1rem;
+}
+
+.game-info-badge {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 1.5rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    min-width: 140px;
+    justify-content: center;
+}
+
+.game-info-label {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-right: 0.25rem;
+}
+
+.game-info-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    font-family: monospace;
+}
+
+/* Word Rendering */
+.word-container {
+    margin: 2rem 0 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    perspective: 1000px;
+    width: 100%;
+}
+
+.letter-tile {
+    width: 4rem;
+    height: 4.5rem;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+}
+
+.letter-tile.glitch::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(239, 68, 68, 0.1);
+    animation: pulse-red 2s infinite;
+}
+
+/* Hint Box */
+.hint-box {
+    background: rgba(59, 130, 246, 0.1);
+    border-left: 4px solid #3b82f6;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    margin: 0 auto 2.5rem;
+    /* Centered with margin auto */
+    text-align: left;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.hint-icon {
+    color: #60a5fa;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.hint-text {
+    font-size: 1.125rem;
+    color: #e2e8f0;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* Input Area */
+.answer-section {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    /* Matched to hint-box */
+    margin: 0 auto 1rem;
+    /* Centered with margin auto */
+}
+
+.modern-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    font-size: 2.5rem;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.modern-input:focus {
+    border-color: var(--color-primary);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.modern-input::placeholder {
+    color: rgba(255, 255, 255, 0.1);
+    letter-spacing: normal;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+/* Feedback Message */
+.feedback-message {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.feedback-success {
+    color: #4ade80;
+    text-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
+}
+
+.feedback-error {
+    color: #f87171;
+    text-shadow: 0 0 20px rgba(248, 113, 113, 0.5);
+}
+
+/* Button Give Up */
+.btn-giveup {
+    background: rgba(239, 68, 68, 0.05);
+    border: 1px solid rgba(239, 68, 68, 0.6);
+    color: #f87171;
+    padding: 0.75rem 2.5rem;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 2rem auto 0;
+    letter-spacing: 0.05em;
+}
+
+.btn-giveup:hover {
+    background: rgba(239, 68, 68, 0.15);
+    border-color: #f87171;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+}
+
+/* --- Tablet Responsive (iPad, Tablets) --- */
+@media (max-width: 1024px) {
+    .game-header {
+        margin-bottom: 2rem;
+    }
+
+    .game-info-badge {
+        padding: 0.5rem 1rem;
+        min-width: auto;
+    }
+
+    .game-info-value {
+        font-size: 1.25rem;
+    }
+
+    .letter-tile {
+        width: 3.5rem;
+        height: 4rem;
+        font-size: 1.75rem;
+    }
+
+    .modern-input {
+        font-size: 2rem;
+    }
+}
+
+/* --- Mobile Responsive (Phones) --- */
+@media (max-width: 640px) {
+    .scramble-game-container {
+        padding: 0 0.5rem;
+    }
+
+    /* Stack header neatly using grid for 3 items */
+    .game-header {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .game-info-badge {
+        flex-direction: column;
+        padding: 0.5rem 0.25rem;
+        border-radius: 0.75rem;
+        min-width: 0;
+        gap: 0.25rem;
+    }
+
+    .game-info-label {
+        font-size: 0.65rem;
+        margin-right: 0;
+    }
+
+    .game-info-value {
+        font-size: 1rem;
+    }
+
+    .word-container {
+        gap: 0.35rem;
+        margin: 1.5rem 0;
+    }
+
+    .letter-tile {
+        width: 2.25rem;
+        height: 2.75rem;
+        font-size: 1.25rem;
+        border-radius: 0.5rem;
+    }
+
+    .hint-box {
+        padding: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hint-text {
+        font-size: 0.9rem;
+    }
+
+    .modern-input {
+        font-size: 1.5rem;
+        letter-spacing: 0.1em;
+        padding: 0.5rem;
+    }
+
+    .feedback-message {
+        font-size: 1.25rem;
+    }
+}

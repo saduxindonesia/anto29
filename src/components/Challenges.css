@@ -1,0 +1,214 @@
+.challenges-section {
+    padding: 6rem 0;
+    min-height: 100vh;
+    background: radial-gradient(circle at center bottom, #0f172a, #020617);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.challenges-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    width: 100%;
+}
+
+.challenges-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.trophy-icon-wrapper {
+    display: inline-block;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+}
+
+.challenges-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.challenges-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.challenges-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .challenges-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.challenge-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.challenge-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.card-gradient-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.challenge-card:hover .card-gradient-overlay {
+    opacity: 0.15;
+}
+
+.gradient-blue {
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+}
+
+.gradient-purple {
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+}
+
+.card-content {
+    position: relative;
+    z-index: 10;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+.icon-box {
+    padding: 1.25rem;
+    border-radius: 1.25rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+}
+
+.icon-box.gradient-blue {
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+}
+
+.icon-box.gradient-purple {
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+}
+
+.icon-white {
+    color: white;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0.75rem;
+}
+
+.card-description {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.card-footer {
+    width: 100%;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.difficulty-badge {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #94a3b8;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.25rem 0.75rem;
+    border-radius: 99px;
+}
+
+.play-link {
+    color: var(--color-accent);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: transform 0.2s;
+}
+
+.challenge-card:hover .play-link {
+    transform: translateX(4px);
+    color: white;
+}
+
+/* Game View Styles */
+.game-view-wrapper {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.back-button-container {
+    margin-bottom: 1.5rem;
+    display: flex;
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: none;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.75rem;
+    transition: all 0.2s;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.game-wrapper {
+    flex-grow: 1;
+}
+
+/* Override inner game paddings */
+.challenges-section .game-section,
+.challenges-section .scramble-section {
+    padding: 2rem 0;
+    background: transparent;
+    min-height: auto;
+}
